@@ -2,7 +2,8 @@ require("dotenv/config");
 const { Bot, GrammyError, HttpError } = require("grammy");
 const moment = require("moment-timezone");
 
-const bot = new Bot(process.env.7981971726:AAFevWyY1TneRaI8w2BomrXa-Kf-NZXe0JU);
+const bot = new Bot(process.env.BOT_TOKEN);
+
 
 let flag = false;
 
