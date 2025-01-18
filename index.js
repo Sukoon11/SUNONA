@@ -1,8 +1,8 @@
-require('dotenv/config');
-const { Bot } = require('grammy');
+require("dotenv/config");
+const { Bot, GrammyError, HttpError } = require("grammy");
+const moment = require("moment-timezone");
 
-const bot = new Bot(process.env.BOT_TOKEN);
-
+const bot = new Bot(process.env.8058961940:AAGWLxTqRR6JPRfcj829Vp8eRazZZG0STJI);
 
 let flag = false;
 
@@ -22,7 +22,7 @@ bot.use(async (ctx, next) => {
 });
 
 bot.command("start", async (ctx) => {
-    if (ctx.from.id === parseInt(process.env.ADMIN_ID, 10)) {
+    if (ctx.from.id === parseInt(process.env.6614734986)) {
         await ctx.reply("<b>🎛 Admin Panel</b>", {
             parse_mode: "HTML",
             reply_markup: {
