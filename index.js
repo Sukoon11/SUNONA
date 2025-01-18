@@ -1,8 +1,10 @@
-require("dotenv/config");
 const { Bot, GrammyError, HttpError } = require("grammy");
 const moment = require("moment-timezone");
+const config = require("./config"); 
 
-console.log("Bot Token:", process.env.BOT_TOKEN);
+const bot = new Bot(config.BOT_TOKEN);
+
+console.log("Bot Token:", config.BOT_TOKEN);
 
 let flag = false;
 
@@ -22,7 +24,7 @@ bot.use(async (ctx, next) => {
 });
 
 bot.command("start", async (ctx) => {
-    if (ctx.from.id === parseInt(process.env.ADMIN_ID)) {
+    if (ctx.from.id === config.ADMIN_ID) {
         await ctx.reply("<b>🎛 Admin Panel</b>", {
             parse_mode: "HTML",
             reply_markup: {
@@ -43,7 +45,6 @@ bot.command("start", async (ctx) => {
         });
     }
 });
-
 
 bot.callbackQuery(/^process (start|stop)$/, async (ctx) => {
     flag = ctx.callbackQuery.data.split(" ")[1] === "start";
@@ -87,7 +88,7 @@ async function sendMessage() {
     const prediction = getPrediction();
     const time = getTime();
     await bot.api.sendMessage(
-        process.env.CHANNEL,
+        config.CHANNEL,
         `<b>❤️ 91 CLUB PREDICTION:</b>\n<b>🕹 Gᴀᴍᴇ :</b> Wɪɴɢᴏ 1 Mɪɴ \n<b>📟 Pᴇʀɪᴏᴅ Nᴏ :</b> ${period}\n<b>🎰 Pʀᴇᴅɪᴄᴛɪᴏɴ </b>: ${prediction}\n<b>✅ MANAGE FUND UP TO LEVEL 7</b>`,
         { parse_mode: "HTML" }
     );
