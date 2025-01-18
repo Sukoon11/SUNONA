@@ -22,7 +22,7 @@ bot.use(async (ctx, next) => {
 });
 
 bot.command("start", async (ctx) => {
-    if (ctx.from.id === parseInt(process.env.6625936112)) {
+    if (ctx.from.id === parseInt(process.env.ADMIN_ID)) {
         await ctx.reply("<b>🎛 Admin Panel</b>", {
             parse_mode: "HTML",
             reply_markup: {
@@ -43,6 +43,7 @@ bot.command("start", async (ctx) => {
         });
     }
 });
+
 
 bot.callbackQuery(/^process (start|stop)$/, async (ctx) => {
     flag = ctx.callbackQuery.data.split(" ")[1] === "start";
