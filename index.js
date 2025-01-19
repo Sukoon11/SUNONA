@@ -87,10 +87,21 @@ async function sendMessage() {
     const period = getPeriod();
     const prediction = getPrediction();
     const time = getTime();
+
     await bot.api.sendMessage(
         config.CHANNEL,
         `<b>❤️ DM WIN PREDICTION:</b>\n<b>🕹 Gᴀᴍᴇ :</b> Wɪɴɢᴏ 1 Mɪɴ \n<b>📟 Pᴇʀɪᴏᴅ Nᴏ :</b> ${period}\n<b>🎰 Pʀᴇᴅɪᴄᴛɪᴏɴ </b>: ${prediction}\n<b>✅ MANAGE FUND UP TO LEVEL 7</b>`,
-        { parse_mode: "HTML" }
+        {
+            parse_mode: "HTML",
+            reply_markup: {
+                inline_keyboard: [
+                    [
+                        { text: "Register This Link", url: "https://www.dmwin3.com/#/register?invitationCode=15256898639" },
+                        { text: "DmWin Register Link", url: "https://www.dmwin3.com/#/register?invitationCode=15256898639" }
+                    ]
+                ]
+            }
+        }
     );
 }
 
