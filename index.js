@@ -95,15 +95,14 @@ async function sendMessage() {
             parse_mode: "HTML",
             reply_markup: {
                 inline_keyboard: [
-                    [
-                        { text: "Register This Link", url: "https://www.dmwin3.com/#/register?invitationCode=15256898639" },
-                        { text: "DmWin Register Link", url: "https://www.dmwin3.com/#/register?invitationCode=15256898639" }
-                    ]
+                    [{ text: "Register This Link", url: "https://www.dmwin3.com/#/register?invitationCode=15256898639" }],
+                    [{ text: "DmWin Register Link", url: "https://www.dmwin3.com/#/register?invitationCode=15256898639" }]
                 ]
             }
         }
     );
 }
+
 
 async function startProcess() {
     const currentTime = moment.tz("Asia/Kolkata");
