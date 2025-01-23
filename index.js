@@ -79,7 +79,7 @@ function getPrediction() {
 }
 
 function getTime() {
-    const currentDate = moment.tz("Asia/Kolkata");
+    const currentDate = moment.tz("India/Kolkata");
     return currentDate.format("yyyy-MM-dd HH:mm");
 }
 
