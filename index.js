@@ -80,7 +80,7 @@ function getPrediction() {
 
 function getTime() {
     const currentDate = moment.tz("Asia/Kolkata");
-    return currentDate.format("HH:mm:ss.SSS");
+    return currentDate.format("yyyy-MM-dd HH:mm");
 }
 
 async function sendMessage() {
