@@ -63,14 +63,7 @@ bot.callbackQuery(/^process (start|stop)$/, async (ctx) => {
     });
 });
 
-function getPeriod() {
-    const currentDate = moment.tz("Asia/Kolkata");
-    const year = currentDate.year();
-    const month = (currentDate.month() + 1).toString().padStart(2, "0");
-    const date = currentDate.date().toString().padStart(2, "0");
-    const minutes = (currentDate.hour() * 60 + currentDate.minute() + 1).toString().padStart(4, "0");
-    return `${year}${month}${date}01${minutes}`;
-}
+
 
 function getPrediction() {
     const array = ["BIG", "SMALL"];
